@@ -1,0 +1,2 @@
+# inireader
+inireader用于解析ini文件
