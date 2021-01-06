@@ -53,7 +53,7 @@ func (i *IReader) parse() error {
 			i.ConfigMap[nowBlock] = make(map[string]string, 0)
 		} else if roleLine.MatchString(eline) {
 			kvs := roleLine.FindStringSubmatch(eline)
-			i.ConfigMap[nowBlock][kvs[1]] = kvs[2]
+			i.ConfigMap[nowBlock][string.TrimSpace(kvs[1])] = string.TrimSpace(kvs[2])
 		}
 
 	}
